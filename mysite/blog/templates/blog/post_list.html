@@ -20,7 +20,7 @@
         {% for post in posts %}
             <article class=" card my-3 ">
                 <div class="d-flex gap-5 align-items-center ">
-                    <h2 class="p-2"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }} {{post.id}}</a>
+                    <h2 class="p-2"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
                     </h2>
                     <a href="{% url 'post_edit' pk=post.pk %}">Edit</a>
                     <a href="{% url 'post_delete' pk=post.pk %}" class="text-danger">Delete</a>

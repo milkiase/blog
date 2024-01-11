@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
+from django.contrib.auth.models import User
 from .forms import PostForm
 from django.utils import timezone
 
@@ -20,7 +21,7 @@ def post_new(request):
         if(form.is_valid()):
             post = form.save(commit=False)
             post.published_date = timezone.now()
-            post.author = request.user
+            post.author = User.objects.all()[0]
             post.save()
             return redirect('post_list')
     else:
@@ -34,7 +35,7 @@ def post_edit(request, pk):
        if(form.is_valid()):
            post = form.save(commit=False)
            post.published_date = timezone.now()
-           post.author = request.user 
+           post.author = User.objects.all()[0]
            post.save()
            return redirect('post_list')
     else:
