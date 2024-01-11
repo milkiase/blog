@@ -22,8 +22,10 @@
                 <div class="d-flex gap-5 align-items-center ">
                     <h2 class="p-2"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
                     </h2>
-                    <a href="{% url 'post_edit' pk=post.pk %}">Edit</a>
-                    <a href="{% url 'post_delete' pk=post.pk %}" class="text-danger">Delete</a>
+                    <span>
+                        <a href="{% url 'post_edit' pk=post.pk %}">Edit</a> |
+                        <a href="{% url 'post_delete' pk=post.pk %}" class="text-danger">Delete</a>
+                    </span>
                 </div>
                 <div class="card-body">
                     <p> {{post.text}} </p>
