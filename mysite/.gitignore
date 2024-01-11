@@ -6,6 +6,7 @@ osvenv/
 venv/
 .env
 
+db.sqlite3
 
 /static/
 
