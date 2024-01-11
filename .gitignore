@@ -1,1 +1,16 @@
-/osvenv
+*.pyc
+__pycache__
+
+
+osvenv/
+venv/
+.env
+
+db.sqlite3
+
+/static/
+
+.vscode/
+.history/
+
+*.code-workspace
